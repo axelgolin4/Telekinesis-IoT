@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T00:00:00Z",
+  "title": "Design System: Telekinesis IoT",
+  "extensions": {
+    "colorMeta": {
+      "noche": { "role": "neutral", "displayName": "Azul noche", "canonical": "#101d35", "tonalRamp": ["#060b16", "#0a1426", "#101d35", "#16284a", "#2a3e63", "#4b5f82", "#8a9bb3", "#d5dde8"] },
+      "noche-2": { "role": "neutral", "displayName": "Noche 2", "canonical": "#16284a", "tonalRamp": ["#08101f", "#0f1b31", "#16284a", "#213760", "#34507f", "#5a73a0", "#9aaac6", "#dbe2ee"] },
+      "azul": { "role": "primary", "displayName": "Azul tecnológico", "canonical": "#1769ff", "tonalRamp": ["#04205a", "#0a3a9c", "#0f55d6", "#1769ff", "#4a8bff", "#6aa0ff", "#a9c7ff", "#e3edff"] },
+      "azul-hondo": { "role": "primary", "displayName": "Azul hondo", "canonical": "#0f55d6", "tonalRamp": ["#041a47", "#08307f", "#0f55d6", "#2e6fe6", "#5a8ef0", "#8aaff6", "#bcd1fa", "#e8f0fe"] },
+      "cyan": { "role": "secondary", "displayName": "Cyan señal", "canonical": "#21c7d9", "tonalRamp": ["#063a40", "#0b5e68", "#128894", "#1aaebd", "#21c7d9", "#5fd9e6", "#a3eaf1", "#e2f9fb"] },
+      "niebla": { "role": "neutral", "displayName": "Niebla", "canonical": "#f4f7fa", "tonalRamp": ["#1f2f4d", "#5b6b80", "#8a9bb3", "#b9c6d8", "#d5dde8", "#e3e9f0", "#f4f7fa", "#fbfcfd"] },
+      "fondo": { "role": "neutral", "displayName": "Blanco (fondo)", "canonical": "#ffffff" },
+      "superficie": { "role": "neutral", "displayName": "Superficie", "canonical": "#f4f7fa" },
+      "tarjeta": { "role": "neutral", "displayName": "Tarjeta", "canonical": "#ffffff" },
+      "texto": { "role": "neutral", "displayName": "Texto", "canonical": "#101d35" },
+      "texto-2": { "role": "neutral", "displayName": "Gris pizarra", "canonical": "#5b6b80" },
+      "borde": { "role": "neutral", "displayName": "Borde frío", "canonical": "#e3e9f0" },
+      "enlace": { "role": "primary", "displayName": "Enlace", "canonical": "#1769ff" },
+      "fondo-oscuro": { "role": "neutral", "displayName": "Fondo (oscuro)", "canonical": "#0a1426" },
+      "superficie-oscuro": { "role": "neutral", "displayName": "Superficie (oscuro)", "canonical": "#0f1b31" },
+      "tarjeta-oscuro": { "role": "neutral", "displayName": "Tarjeta (oscuro)", "canonical": "#13213b" },
+      "texto-oscuro": { "role": "neutral", "displayName": "Texto (oscuro)", "canonical": "#eaf1fb" },
+      "texto-2-oscuro": { "role": "neutral", "displayName": "Texto secundario (oscuro)", "canonical": "#a3b1c6" },
+      "borde-oscuro": { "role": "neutral", "displayName": "Borde (oscuro)", "canonical": "#1f2f4d" },
+      "enlace-oscuro": { "role": "primary", "displayName": "Enlace (oscuro)", "canonical": "#6aa0ff" },
+      "texto-sobre-noche": { "role": "neutral", "displayName": "Texto sobre noche", "canonical": "#b9c6d8" },
+      "texto-2-sobre-noche": { "role": "neutral", "displayName": "Texto secundario sobre noche", "canonical": "#a9b6c9" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Solo el titular del hero." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección (componente Titulo)." },
+      "title": { "displayName": "Title", "purpose": "Títulos de tarjeta, pasos y columnas del footer." },
+      "body-lg": { "displayName": "Body grande", "purpose": "Subtítulos e introducciones de sección." },
+      "body": { "displayName": "Body", "purpose": "Texto de tarjetas y listas." },
+      "label": { "displayName": "Label", "purpose": "Etiquetas de formulario, botón de la barra, chips." }
+    },
+    "shadows": [
+      { "name": "elevacion-hover", "value": "0 24px 40px -24px rgba(16,29,53,0.35)", "purpose": "Tarjeta de solución en hover, junto con translateY(-4px)." },
+      { "name": "nucleo-diagrama", "value": "0 18px 40px -16px rgba(0,0,0,0.6)", "purpose": "Centro de la plataforma en el diagrama del hero." },
+      { "name": "halo-accion", "value": "0 12px 28px -10px rgba(23,105,255,0.7)", "purpose": "Botón flotante de WhatsApp." }
+    ],
+    "motion": [
+      { "name": "ease-out-strong", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Entrada del menú móvil (pop-in, 180ms)." },
+      { "name": "press", "value": "150ms; active scale 0.97", "purpose": "Fondo y presión de botones." },
+      { "name": "hover-tarjeta", "value": "200ms ease-out", "purpose": "Elevación y encendido de la tarjeta de solución." },
+      { "name": "pulso", "value": "2.6s linear infinite; dasharray 6 220; desfase 0.43s por nodo", "purpose": "Pulsos de datos del diagrama del hero; detenido con movimiento reducido." },
+      { "name": "aparece", "value": "animation-timeline: view(); entry 0%–35%; translateY(16px) + opacity", "purpose": "Aparición al scroll, solo con soporte y sin movimiento reducido." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Toda acción hacia la asesoría: barra, hero, CTA y formulario.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Solicitar asesoría</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 12px; background: #1769ff; color: #fff; font-family: Inter, sans-serif; font-weight: 600; text-decoration: none; transition: background-color 150ms, transform 150ms; } .ds-btn-primary:hover { background: #0f55d6; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #21c7d9; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón claro sobre noche",
+      "kind": "button",
+      "refersTo": "button-claro",
+      "description": "Acción secundaria del hero sobre fondo noche.",
+      "html": "<div class=\"ds-noche\"><a class=\"ds-btn-claro\" href=\"#\">Explorar soluciones <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-noche { background: #101d35; padding: 24px; border-radius: 16px; } .ds-btn-claro { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 12px; background: #fff; color: #101d35; font-family: Inter, sans-serif; font-weight: 600; text-decoration: none; transition: background-color 150ms, transform 150ms; } .ds-btn-claro:hover { background: #f4f7fa; } .ds-btn-claro:active { transform: scale(0.97); } .ds-btn-claro:focus-visible { outline: 2px solid #21c7d9; outline-offset: 3px; }"
+    },
+    {
+      "name": "Tarjeta de solución",
+      "kind": "card",
+      "refersTo": "card-solucion",
+      "description": "Solución por problema; la señal se enciende en hover.",
+      "html": "<div class=\"ds-card-solucion\"><span class=\"ds-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\"/></svg></span><h3>Monitoreo inteligente de agua</h3><p>Mide niveles de tanques, caudal, presión y consumo.</p><span class=\"ds-nombre\">Smart Water</span></div>",
+      "css": ".ds-card-solucion { max-width: 300px; padding: 24px; border-radius: 24px; background: var(--tarjeta, #fff); box-shadow: 0 0 0 1px var(--borde, #e3e9f0); transition: box-shadow 200ms ease-out, transform 200ms ease-out; font-family: Inter, sans-serif; } .ds-card-solucion:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(33,199,217,0.7), 0 24px 40px -24px rgba(16,29,53,0.35); } .ds-card-solucion .ds-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; background: rgba(23,105,255,0.1); color: #1769ff; transition: background-color 200ms, color 200ms; } .ds-card-solucion:hover .ds-icon { background: #21c7d9; color: #101d35; } .ds-card-solucion h3 { margin: 20px 0 0; font-family: Lexend, sans-serif; font-size: 1.125rem; font-weight: 600; color: var(--texto, #101d35); } .ds-card-solucion p { margin: 8px 0 0; font-size: 0.95rem; line-height: 1.625; color: var(--texto-2, #5b6b80); } .ds-nombre { display: block; margin-top: 16px; font-size: 0.875rem; font-weight: 500; color: var(--enlace, #1769ff); }"
+    },
+    {
+      "name": "Campo de formulario",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campos del formulario de asesoría.",
+      "html": "<label class=\"ds-label\" for=\"ds-nombre\">Nombre</label><input id=\"ds-nombre\" class=\"ds-input\" />",
+      "css": ".ds-label { display: block; margin-bottom: 6px; font-family: Inter, sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--texto, #101d35); } .ds-input { width: 100%; min-height: 48px; padding: 12px 16px; border: 1px solid var(--borde, #e3e9f0); border-radius: 12px; background: var(--tarjeta, #fff); color: var(--texto, #101d35); outline: none; transition: border-color 150ms, box-shadow 150ms; } .ds-input:focus { border-color: #1769ff; box-shadow: 0 0 0 2px rgba(23,105,255,0.2); }"
+    },
+    {
+      "name": "Barra de navegación",
+      "kind": "nav",
+      "description": "Barra fija translúcida con selector de idioma, tema y acción primaria.",
+      "html": "<nav class=\"ds-nav\"><strong class=\"ds-logo\">Telekinesis <span>IoT</span></strong><ul><li><a href=\"#\">Soluciones</a></li><li><a href=\"#\">Servicios</a></li><li><a href=\"#\">Contacto</a></li></ul><span class=\"ds-lang\"><b>ES</b><i>EN</i></span><a class=\"ds-nav-cta\" href=\"#\">Solicitar asesoría</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; padding: 12px 24px; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--borde, #e3e9f0); font-family: Inter, sans-serif; } .ds-logo { font-family: Lexend, sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; color: var(--texto, #101d35); } .ds-logo span { font-weight: 500; color: #1769ff; } .ds-nav ul { display: flex; gap: 28px; list-style: none; margin: 0 auto 0 0; padding: 0; } .ds-nav ul a { font-size: 0.95rem; font-weight: 500; color: var(--texto-2, #5b6b80); text-decoration: none; transition: color 150ms; } .ds-nav ul a:hover { color: var(--texto, #101d35); } .ds-lang { display: inline-flex; align-items: center; height: 36px; padding: 0 4px; border: 1px solid var(--borde, #e3e9f0); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; } .ds-lang b, .ds-lang i { padding: 4px 8px; border-radius: 9999px; font-style: normal; } .ds-lang b { background: #101d35; color: #fff; } .ds-lang i { color: #5b6b80; } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 12px; background: #1769ff; color: #fff; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background-color 150ms; } .ds-nav-cta:hover { background: #0f55d6; }"
+    },
+    {
+      "name": "Chip de tecnología",
+      "kind": "chip",
+      "refersTo": "chip-tecnologia",
+      "description": "Herramientas del stack dentro de las tarjetas de Tecnología.",
+      "html": "<div class=\"ds-chips\"><span class=\"ds-chip\">ESP32</span><span class=\"ds-chip\">LoRaWAN</span><span class=\"ds-chip\">MQTT</span></div>",
+      "css": ".ds-chips { display: flex; gap: 8px; flex-wrap: wrap; padding: 20px; border-radius: 24px; background: var(--superficie, #f4f7fa); } .ds-chip { padding: 6px 12px; border-radius: 8px; background: var(--tarjeta, #fff); box-shadow: 0 0 0 1px var(--borde, #e3e9f0); font-family: Inter, sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--texto, #101d35); }"
+    },
+    {
+      "name": "Panel de monitoreo (datos de ejemplo)",
+      "kind": "custom",
+      "refersTo": "badge-ejemplo",
+      "description": "Tarjeta del hero con lecturas de muestra; la insignia «Datos de ejemplo» es obligatoria.",
+      "html": "<div class=\"ds-noche\"><div class=\"ds-panel\"><div class=\"ds-panel-head\"><strong>Panel de monitoreo</strong><span class=\"ds-badge\">Datos de ejemplo</span></div><dl><div><dt>Nivel de tanque</dt><dd>72 %</dd></div><div><dt>Consumo eléctrico</dt><dd>18,6 kW</dd></div></dl></div></div>",
+      "css": ".ds-noche { background: #101d35; padding: 24px; border-radius: 16px; } .ds-panel { max-width: 384px; padding: 20px; border-radius: 16px; background: rgba(255,255,255,0.06); box-shadow: 0 0 0 1px rgba(255,255,255,0.1); font-family: Inter, sans-serif; } .ds-panel-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: #fff; } .ds-badge { padding: 2px 8px; border-radius: 9999px; background: rgba(33,199,217,0.15); color: #21c7d9; font-size: 0.7rem; font-weight: 500; } .ds-panel dl { margin: 16px 0 0; } .ds-panel dl div { display: flex; justify-content: space-between; font-size: 0.875rem; margin-top: 10px; } .ds-panel dt { color: #a9b6c9; } .ds-panel dd { margin: 0; color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La sala de control",
+    "overview": "Lo físico se vuelve dato. El sitio alterna bandas de noche azul profunda (hero, propuesta de valor, CTA, footer), donde los dispositivos se ven conectados a un centro que los observa, con bandas claras de lectura en blanco y gris niebla, donde se explican soluciones, servicios y tecnología. El cyan es la señal viva que recorre ambas: líneas, pulsos, viñetas, íconos sobre noche y el borde que se enciende al pasar el cursor.\n\nEl tono es premium, minimalista, tecnológico y corporativo, por pedido explícito del brief. La paleta, las secciones y la estructura (barra de navegación con selector ES/EN y de tema, botón flotante de WhatsApp, footer oscuro) vienen fijadas por el usuario y siguen al sitio hermano Plastikinesis; los titulares en Lexend son el hilo visual compartido entre ambas empresas. Se rechaza la landing SaaS genérica de gradiente morado con tres tarjetas de beneficios.\n\nDensidad media, mucho aire vertical, tarjetas grandes de esquinas generosas, sombras casi ausentes. El movimiento es funcional: pulsos de datos en el hero, aparición suave al hacer scroll donde el navegador lo soporta, y presión táctil en botones.",
+    "keyCharacteristics": [
+      "Alternancia de bandas noche / claras como ritmo de página.",
+      "Cyan reservado a la señal: líneas, pulsos, viñetas, íconos sobre fondo oscuro, estado hover.",
+      "Azul tecnológico reservado a las acciones.",
+      "Tarjetas de 24px con anillo de 1px en lugar de sombra.",
+      "Modo claro y oscuro completos mediante la clase `dark` en `<html>`.",
+      "Bilingüe: cada superficie existe en `/es` y `/en` con el mismo diseño."
+    ],
+    "rules": [
+      { "name": "The Señal Rule", "body": "El cyan nunca es fondo de bloque ni color de botón: es la línea, el punto, el ícono o el borde por donde «pasa el dato». La única excepción es el fondo del ícono de una tarjeta de solución en hover.", "section": "colors" },
+      { "name": "The Una Acción Rule", "body": "Todo lo que se puede pulsar para avanzar hacia la asesoría es azul tecnológico. El botón blanco del hero («Explorar soluciones») y el botón noche de WhatsApp son las únicas alternativas, y solo sobre su contexto.", "section": "colors" },
+      { "name": "The Datos de Ejemplo Rule", "body": "Toda lectura numérica en la tarjeta de panel del hero es dato de muestra y debe ir marcada visiblemente con la insignia «Datos de ejemplo» / «Sample data» (y repetida para lectores de pantalla). No se publican cifras sin esa etiqueta hasta que existan datos reales.", "section": "colors" },
+      { "name": "The Dos Voces Rule", "body": "Lexend para todo lo que titula (h1, h2, h3, logotipo, eslogan, números de paso, menú móvil); Inter para todo lo que se lee. No hay una tercera familia ni monoespaciada.", "section": "typography" },
+      { "name": "The Anillo Antes Que Sombra Rule", "body": "En reposo, las tarjetas se separan con un anillo de 1px en `borde`; la sombra es respuesta a un estado (hover) o marca un elemento único flotante.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** usar azul tecnológico (`azul`) para cada acción que lleva a la asesoría, con hover a `azul-hondo`.",
+      "**Do** reservar el cyan para la señal: líneas, pulsos, viñetas de 6px, íconos sobre noche, focos y hover.",
+      "**Do** alternar bandas noche y claras; poner la retícula de puntos solo sobre noche.",
+      "**Do** separar tarjetas con anillo de 1px y esquinas de 24px; dejar la sombra para el hover.",
+      "**Do** titular en Lexend semibold con tracking negativo y leer en Inter.",
+      "**Do** definir cada nuevo color de superficie o texto con su pareja `.dark`.",
+      "**Do** mantener visible la insignia «Datos de ejemplo» / «Sample data» junto a cualquier cifra de muestra.",
+      "**Do** usar el símbolo del cliente tal como fue entregado (fondo eliminado), sin redibujarlo.",
+      "**Do** respetar `prefers-reduced-motion`: pulsos detenidos, sin aparición al scroll, transiciones a 1ms."
+    ],
+    "donts": [
+      "**Don't** usar gradientes morados ni la composición SaaS de tres tarjetas de beneficios.",
+      "**Don't** usar cyan como fondo de botón o de bloque grande.",
+      "**Don't** publicar cifras, clientes, certificaciones o alianzas inventadas como si fueran reales.",
+      "**Don't** introducir una tercera familia tipográfica.",
+      "**Don't** ocultar contenido por defecto esperando la animación de scroll; el contenido es visible sin ella."
+    ]
+  }
+}

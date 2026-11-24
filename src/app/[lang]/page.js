@@ -141,7 +141,7 @@ export default async function Home({ params }) {
                   </span>
                   <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-texto">{s.titulo}</h3>
                   <p className="mt-2 text-[0.95rem] leading-relaxed text-texto-2">{s.texto}</p>
-                  <p className="mt-4 text-sm font-medium text-enlace">{s.nombre}</p>
+                  <p className="mt-4 text-sm font-medium text-texto-2">{s.nombre}</p>
                 </li>
               );
             })}
