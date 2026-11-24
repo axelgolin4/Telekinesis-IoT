@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
+/* Modo oscuro por clase en <html>, controlado por el botón de tema. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Superficies y textos que cambian con el tema. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fondo: #ffffff;
+  --superficie: #f4f7fa;
+  --tarjeta: #ffffff;
+  --texto: #101d35;
+  --texto-2: #5b6b80;
+  --borde: #e3e9f0;
+  --enlace: #1769ff;
+  color-scheme: light;
 }
 
+.dark {
+  --fondo: #0a1426;
+  --superficie: #0f1b31;
+  --tarjeta: #13213b;
+  --texto: #eaf1fb;
+  --texto-2: #a3b1c6;
+  --borde: #1f2f4d;
+  --enlace: #6aa0ff;
+  color-scheme: dark;
+}
+
+/* Paleta del brief (azul oscuro, azul tecnológico, cyan, grises) y tokens de tema. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-noche: #101d35;
+  --color-noche-2: #16284a;
+  --color-azul: #1769ff;
+  --color-azul-hondo: #0f55d6;
+  --color-cyan: #21c7d9;
+  --color-menta: #1fd1a5;
+  --color-niebla: #f4f7fa;
+  --color-gris: #64748b;
+
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-tarjeta: var(--tarjeta);
+  --color-texto: var(--texto);
+  --color-texto-2: var(--texto-2);
+  --color-borde: var(--borde);
+  --color-enlace: var(--enlace);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-lexend);
+
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #8a9bb3 var(--fondo);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  caret-color: var(--color-azul);
+}
+
+p,
+li,
+dd {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-noche);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Textura de retícula de puntos para fondos oscuros. */
+.reticula {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.pop-in {
+  transition:
+    opacity 180ms var(--ease-out-strong),
+    transform 180ms var(--ease-out-strong);
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/* Pulsos de datos que viajan por las líneas del diagrama del hero. */
+.pulso {
+  stroke-dasharray: 6 220;
+  animation: pulso 2.6s linear infinite;
+  animation-delay: var(--retraso, 0s);
+}
+@keyframes pulso {
+  from {
+    stroke-dashoffset: 226;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Aparición suave al hacer scroll, solo donde el navegador lo soporta; el contenido es visible por defecto. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .aparece {
+      animation: aparece linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+    @keyframes aparece {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .pulso {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.35;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+  }
 }

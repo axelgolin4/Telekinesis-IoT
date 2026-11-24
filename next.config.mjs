@@ -11,6 +11,10 @@ const nextConfig = {
       },
     },
   },
+  // El sitio vive en /es y /en; la raíz va a español.
+  async redirects() {
+    return [{ source: "/", destination: "/es", permanent: false }];
+  },
 };
 
 export default nextConfig;
